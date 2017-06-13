@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 11:19:38 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-13 11:17:06
+ * @Last Modified time: 2017-06-13 12:54:27
  */
 'use strict'
 
@@ -15,11 +15,21 @@ import ScreenMe from './screen/ScreenMe';
 
 import { COLOR, NAV_BAR_HEIGHT, TAB_BAR_HEIGHT } from './constant/config';
 import { GameTabBarIcon, FeedTabBarIcon, MeTabBarIcon } from './TabBarIcon';
+import GameString from '../assets/config/string.json';
 
 const RootNavigator = TabNavigator({
-    Game: { screen: ScreenGame, navigationOptions: { title: '游戏', tabBarLabel: '游戏', tabBarIcon: GameTabBarIcon } },
-    Feed: { screen: ScreenFeed, navigationOptions: { title: '动态', tabBarLabel: '动态', tabBarIcon: FeedTabBarIcon } },
-    Me: { screen: ScreenMe, navigationOptions: {title: '我', tabBarLabel: '我', tabBarIcon: MeTabBarIcon} }
+    Game: { screen: ScreenGame, navigationOptions: {
+        title: GameString.LabelName.firstLabel,
+        tabBarLabel: GameString.LabelName.firstLabel,
+        tabBarIcon: GameTabBarIcon } },
+    Feed: { screen: ScreenFeed, navigationOptions: {
+        title: GameString.LabelName.secondLabel,
+        tabBarLabel: GameString.LabelName.secondLabel,
+        tabBarIcon: FeedTabBarIcon } },
+    Me: { screen: ScreenMe, navigationOptions: {
+        title: GameString.LabelName.thirdLabel,
+        tabBarLabel: GameString.LabelName.thirdLabel,
+        tabBarIcon: MeTabBarIcon} }
 },
 {
     tabBarComponent: TabBarBottom,
@@ -38,11 +48,12 @@ const RootNavigator = TabNavigator({
             justifyContent: 'flex-end'
         },
         showIcon: true,
-        activeTintColor: COLOR.theme,//'#fd5617'
+        activeTintColor: COLOR.theme,
         inactiveTintColor: 'rgba(0, 0, 0, 0.6)',
         labelStyle: {
             fontSize: 10,
-            fontWeight: '300'
+            fontWeight: '300',
+            fontFamily: 'Foundation'
         },
     }
 });
@@ -53,11 +64,12 @@ const RootStack = StackNavigator({
         navigationOptions: {
             headerTintColor: COLOR.titleColor,
             headerStyle: {
-                backgroundColor: COLOR.theme,//'#fa5914'
+                backgroundColor: COLOR.theme,
                 height: NAV_BAR_HEIGHT
             },
             headerTitleStyle: {
-                alignSelf: 'center'
+                alignSelf: 'center',
+                fontFamily: 'Foundation'
             },
         }
     }
