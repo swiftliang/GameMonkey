@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-14 13:26:48 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-15 01:18:40
+ * @Last Modified time: 2017-06-15 15:10:15
  */
 'use strict'
 
@@ -20,6 +20,7 @@ import {
 import URLConf from '../../apis/URLConf';
 import {formatDate} from '../../utils/DateUtil';
 import CommentList from './CommentList';
+import FeedActions from './FeedActions';
 
 const windowWidth = Dimensions.get('window').width;
 const margin = 20;
@@ -34,7 +35,7 @@ export default class FeedCell extends React.Component {
         var images = content.split(":");
         var imagesView = [];
         for (var i = 0; i < images.length - 1; i++) {
-            imagesView.push(<Image source={{ uri: URLConf.IMG_BASE_URL + images[i] + img_thumbnail }} style={styles.feedContentImage} />);
+            imagesView.push(<Image key={i} source={{ uri: URLConf.IMG_BASE_URL + images[i] + img_thumbnail }} style={styles.feedContentImage} />);
         }
         return imagesView;
     }
@@ -81,7 +82,7 @@ export default class FeedCell extends React.Component {
     }
 
     componentWillMount() {
-        console.log(this.props.newComment);
+        //console.log(this.props.newComment);
     }
 
     render() {
@@ -93,7 +94,9 @@ export default class FeedCell extends React.Component {
                         <View style={styles.feedHeader}>
                             <View>
                                 <TouchableOpacity onPress={this.props.pressAvatar}>
-                                    <Image source={{ uri: URLConf.IMG_BASE_URL + this.props.feed.user_avatar + avatar_thumbnail }} style={styles.avatar} />
+                                    {this.props.feed.user_avatar ? 
+                                    <Image source={{ uri: URLConf.IMG_BASE_URL + this.props.feed.user_avatar + avatar_thumbnail }} style={styles.avatar} /> 
+                                    : <Image source={require('../../../assets/imgs/default-avatar.jpg')} style={styles.avatar}/>}
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.feedUserInfo}>

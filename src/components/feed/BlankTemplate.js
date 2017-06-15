@@ -10,8 +10,8 @@ const windowWidth = Dimensions.get('window').width;
 const margin = 10;
 const imgInterval = 5;
 
-var BlankTemplate = React.createClass({
-  render: function() {
+export default class BlankTemplate extends React.Component {
+  render() {
     return (
       <View style={styles.container}>
         <View style={{marginBottom: 10}}><Text style={{color: '#adadad'}}>Loading...</Text></View>
@@ -52,8 +52,8 @@ var BlankTemplate = React.createClass({
         </View>
       </View>
     );
-  },
-});
+  }
+}
 
 var styles = StyleSheet.create({
   container: {

@@ -109,7 +109,17 @@ export function refresh(id, callback) {
 * id 当前最后一条feed
 */
 export function load(id, feeds, page, callback) {
-
+  /*feeds.push({
+    user_avatar: null,
+    user_name: '网大为',
+    ts: 123456,
+    comment_count: 0,
+    like_count: 0,
+    summary: '我在头条上看到的好像6月的时候又出来了什么幺蛾子',
+    content:'http://imgsrc.baidu.com/imgad/pic/item/caef76094b36acaf0accebde76d98d1001e99ce7.jpg'
+  });
+  callback(true, feeds, false);
+  return;*/
   console.log('call back fun: ' +callback);
   getToken((token) => {
     var path = FEED_URL+'page/'+page+'/startfrom/'+id;

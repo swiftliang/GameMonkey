@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-14 13:27:00 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-15 08:39:51
+ * @Last Modified time: 2017-06-15 10:46:52
  */
 'use strict'
 
@@ -111,15 +111,15 @@ export default class FeedList extends React.Component {
                 <ListView
                     isComment={this.state.isComment}
                     dataSource={this.state.dataSource}
-                    renderRow={this.renderFeed}
-                    renderFooter={this.renderFooter}
-                    onEndReached={this.onEndReached}
+                    renderRow={this.renderFeed.bind(this)}
+                    renderFooter={this.renderFooter.bind(this)}
+                    onEndReached={this.onEndReached.bind(this)}
                     onEndReachedThreshold={0}
                     style={styles.listView}
                     refreshControl={
                         <RefreshControl
                             refreshing={this.state.isRefreshing}
-                            onRefresh={this.onRefresh}
+                            onRefresh={this.onRefresh.bind(this)}
                             tintColor="#F3F3F3"
                             title="刷新中..."
                             titleColor="#9B9B9B"
@@ -193,12 +193,12 @@ export default class FeedList extends React.Component {
         return (
             <FeedCell
                 navigator={this.props.navigator}
-                onSelect={() => this.selectFeed(feed).bind(this)}
+                onSelect={() => this.selectFeed(feed)}
                 feed={feed}
                 page={this.state.page}
                 token={this.props.token}
-                pressAvatar={() => this.pressAvatar(feed).bind(this)}
-                push2FeedDetail={() => this.selectFeed(feed).bind(this)}
+                pressAvatar={() => this.pressAvatar(feed)}
+                push2FeedDetail={() => this.selectFeed(feed)}
                 nav2TagDetail={this.nav2TagDetail}
             />
         );

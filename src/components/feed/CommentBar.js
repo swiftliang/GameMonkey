@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-14 13:26:20 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-14 23:49:06
+ * @Last Modified time: 2017-06-15 11:17:24
  */
 'use strict'
 
@@ -20,7 +20,7 @@ import {
 
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 import { SCREEN_WIDTH } from '../../constant/config';
-import { reply } from '../api/CommentAPI';
+import { reply } from '../../apis/CommentAPI';
 
 export default class CommentBar extends React.Component {
     constructor(props) {

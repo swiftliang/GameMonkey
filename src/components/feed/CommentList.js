@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-14 13:26:41 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-15 08:59:00
+ * @Last Modified time: 2017-06-15 11:29:03
  */
 'use strict'
 
@@ -45,7 +45,7 @@ export default class CommentList extends React.Component {
     }
 
     componentDidMount() {
-      this.fetchData();
+      //this.fetchData();
     }
 
     /*
