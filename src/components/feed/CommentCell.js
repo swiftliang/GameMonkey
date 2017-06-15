@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-14 13:26:31 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-14 22:19:27
+ * @Last Modified time: 2017-06-15 08:59:31
  */
 'use strict'
 
@@ -42,7 +42,7 @@ export default class CommentCell extends React.Component {
                 </View>
             );
         } else {
-            return (<Text style={styles.username}>{this.props.comment_author_name}</Text> >);
+            return (<Text style={styles.username}>{this.props.comment_author_name}</Text>);
         }
     }
 

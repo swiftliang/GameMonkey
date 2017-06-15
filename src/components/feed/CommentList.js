@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-14 13:26:41 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-14 23:42:08
+ * @Last Modified time: 2017-06-15 08:59:00
  */
 'use strict'
 
@@ -21,7 +21,7 @@ import {
 
 import PoplarEnv from '../../utils/PoplarEnv';
 import CommentCell from './CommentCell';
-import { getCommentsOfObject } from '../api/CommentAPI';
+import { getCommentsOfObject } from '../../apis/CommentAPI';
 
 export default class CommentList extends React.Component {
     constructor(props) {

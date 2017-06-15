@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
-const margin = 20;
+const margin = 10;
 const imgInterval = 5;
 
 var BlankTemplate = React.createClass({
@@ -19,7 +19,6 @@ var BlankTemplate = React.createClass({
           <View style={styles.feedHeader}>
             <View style={styles.avatar}></View>
             <View style={styles.username}></View>
-
           </View>
           <View style={{flex: 1, marginTop: 10}}>
             <View style={styles.line}></View>
@@ -65,7 +64,7 @@ var styles = StyleSheet.create({
     backgroundColor: 'white',
     marginLeft: margin,
     marginRight: margin,
-    marginTop: 30,
+    marginTop: 10,
   },
   feedBox: {
     flex: 1,
@@ -89,7 +88,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#F3F3F3',
   },
   username: {
-    width: windowWidth - margin - margin * 2 - margin * 2,
+    width: windowWidth - margin - margin * 4 - margin * 4,
     height: 20,
     marginLeft: margin,
     marginRight: margin,

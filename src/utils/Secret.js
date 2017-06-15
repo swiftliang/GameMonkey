@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {AsyncStorage} from 'react-native';
-import URLConf from '../api/URLConf';
+import URLConf from '../apis/URLConf';
 import Md5 from './Md5';
 import PoplarEnv from './PoplarEnv';
 
