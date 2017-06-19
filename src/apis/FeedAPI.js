@@ -109,7 +109,7 @@ export function refresh(id, callback) {
 * id 当前最后一条feed
 */
 export function load(id, feeds, page, callback) {
-  /*feeds.push({
+  feeds.push({
     user_avatar: null,
     user_name: '网大为',
     ts: 123456,
@@ -119,7 +119,7 @@ export function load(id, feeds, page, callback) {
     content:'http://imgsrc.baidu.com/imgad/pic/item/caef76094b36acaf0accebde76d98d1001e99ce7.jpg'
   });
   callback(true, feeds, false);
-  return;*/
+  return;
   console.log('call back fun: ' +callback);
   getToken((token) => {
     var path = FEED_URL+'page/'+page+'/startfrom/'+id;

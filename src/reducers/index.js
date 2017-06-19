@@ -2,18 +2,20 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 11:48:24 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-12 11:53:03
+ * @Last Modified time: 2017-06-17 17:00:49
  */
 'use strict'
 
 import { combineReducers } from 'redux';
-import RootNavigator from '../RootNavigator';
 
-const navReducer = (state, action) => {
-    const newState = RootNavigator.router.getStateForAction(action, state);
-    return newState || state;
-};
+import network from './network';
+import screen from './screen';
+import store from './store';
+import error from './error';
 
 export default combineReducers({
-    navReducer
+    error,
+    network,
+    screen,
+    store
 });

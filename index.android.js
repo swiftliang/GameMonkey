@@ -4,7 +4,11 @@
  * @flow
  */
 
-import App from './src/App';
+/*import App from './src/App';
 import { AppRegistry } from 'react-native';
 
-AppRegistry.registerComponent('GameMonkey', () => App);
+AppRegistry.registerComponent('GameMonkey', () => App);*/
+
+import setup from './src/setup';
+
+setup();

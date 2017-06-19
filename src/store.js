@@ -2,20 +2,55 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 11:43:34 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-12 11:46:55
+ * @Last Modified time: 2017-06-19 09:38:10
  */
 'use strict'
 
-import thunkMiddleWare from 'redux-thunk';
-import { createStore, applyMiddleware } from 'redux';
+import {AsyncStorage} from 'react-native';
+import {createStore, applyMiddleware, compose} from 'redux';
+import thunk from 'redux-thunk';
+import {createLogger} from 'redux-logger';
+import {persistStore, autoRehydrate} from 'redux-persist';
 
+import {IN_DEBUGGER} from './constant/config';
 import reducers from './reducers';
 
-const middleWare = [thunkMiddleWare];
-const store = createStore(
-    reducers,
-    {},
-    applyMiddleware(...middleWare)
-);
+export let store = null;
 
-export default store;
+let middlewares = [thunk];
+if (IN_DEBUGGER) {
+  middlewares.push(createLogger({
+    duration: true,
+    collapsed: true,
+  }));
+}
+
+export const createAppStore = compose(
+  applyMiddleware(...middlewares),
+)(createStore);
+
+export function createPersistAppStore() {
+  console.log('createPersistAppStore');
+  return new Promise((resolve, reject) => {
+    store = createAppStore(reducers, undefined, autoRehydrate());
+    if (IN_DEBUGGER) {
+      window.store = store;
+    }
+
+    persistStore(
+      store,
+      {
+        storage: AsyncStorage, 
+        blacklist: ['loading', 'processing', 'error', 'network', 'location', 
+          'device'],
+      },
+      (error, state) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve({store, state});
+        }
+      },
+    );
+  });
+}

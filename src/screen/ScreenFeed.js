@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 11:38:49 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-15 09:00:17
+ * @Last Modified time: 2017-06-19 10:20:12
  */
 'use strict'
 
@@ -14,7 +14,11 @@ import {
 } from 'react-native';
 import FeedList from '../components/feed/FeedList';
 
-export default class ScreenFeed extends React.Component {
+//import {bindActionCreators} from 'redux';
+//import {connect} from 'react-redux';
+//import * as actions from '../actions';
+
+class ScreenFeed extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -68,3 +72,14 @@ var styles = StyleSheet.create({
         backgroundColor: 'rgba(251, 189, 8, 0.8)',
     }
 });
+
+/*function mapStateToProps(state) {
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actions, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ScreenFeed);*/
+
+export default ScreenFeed;
