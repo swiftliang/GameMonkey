@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-19 14:20:05 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-19 15:22:02
+ * @Last Modified time: 2017-06-19 16:22:59
  */
 'use strict'
 
@@ -23,7 +23,8 @@ import {COLOR, HIDDEN_NAV_BAR_STYLE} from '../constant/config';
 class Bootstrap extends React.Component {
     static navigatorStyle = HIDDEN_NAV_BAR_STYLE;
     componentDidMount() {
-        this.timer1 = setTimeout(() => navToTab(), 2000);
+        let{navigator} = this.props;
+        this.timer1 = setTimeout(() => navigator.resetTo({screen: 'gm.ad', title: ''}), 1000);
     }
 
     componentWillUnmount() {

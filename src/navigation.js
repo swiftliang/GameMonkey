@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-17 15:33:26 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-19 15:01:02
+ * @Last Modified time: 2017-06-19 16:24:02
  */
 'use strict'
 
@@ -29,6 +29,7 @@ export function registerScreens(store, Provider) {
     reg('gm.Feed', screens.ScreenFeed);
     reg('gm.Me', screens.ScreenMe);
     reg('gm.bootstrap', screens.BootStrap);
+    reg('gm.ad', screens.ScreenAd)
 }
 
 export function navToBootstrap({isReset = false} = {}) {
