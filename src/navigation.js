@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-17 15:33:26 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-19 11:41:49
+ * @Last Modified time: 2017-06-19 15:01:02
  */
 'use strict'
 
@@ -28,12 +28,13 @@ export function registerScreens(store, Provider) {
     reg('gm.Game', screens.ScreenGame);
     reg('gm.Feed', screens.ScreenFeed);
     reg('gm.Me', screens.ScreenMe);
+    reg('gm.bootstrap', screens.BootStrap);
 }
 
-export function navToBootStrap({isReset = false} = {}) {
+export function navToBootstrap({isReset = false} = {}) {
     Navigation.startSingleScreenApp({
         screen: {
-            screen: 'Bootstrap',
+            screen: 'gm.bootstrap',
         },
         passProps: {
             isReset,

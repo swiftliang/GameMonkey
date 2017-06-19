@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-17 16:19:58 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-19 11:32:43
+ * @Last Modified time: 2017-06-19 14:59:58
  */
 'use strict'
 
@@ -32,7 +32,7 @@ export default function setup() {
       dispatch(actions.resetScreenLastRefreshTime());
       
       registerScreens(store, Provider);
-      navToTab();
+      navToBootstrap();
     })
     .catch(error => logger.warn(error));
 }

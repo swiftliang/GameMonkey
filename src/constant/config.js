@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 17:31:10 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-17 16:37:23
+ * @Last Modified time: 2017-06-19 15:29:52
  */
 'use strict'
 
@@ -29,8 +29,18 @@ export const COLOR = {
     backgroundDarker: '#D6D6D6'
 };
 
+export const HIDDEN_NAV_BAR_STYLE = {
+  navBarHidden: true,
+  statusBarHidden: true,
+  statusBarHideWithNavBar: true,
+  screenBackgroundColor: 'white'
+};
+
 export const TAB_BAR_STYLE = {
   tabBarBackgroundColor: COLOR.backgroundDarker,
   tabBarButtonColor: COLOR.textEmpha,
   tabBarSelectedButtonColor: COLOR.theme,
+  navBarTitleTextCentered: true,
+  navBarBackgroundColor: COLOR.theme,
+  navBarTextColor: COLOR.titleColor
 };
