@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 17:31:10 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-19 15:29:52
+ * @Last Modified time: 2017-06-30 15:10:47
  */
 'use strict'
 
@@ -20,13 +20,23 @@ export const NAV_BAR_HEIGHT = 45;
 export const TAB_BAR_HEIGHT = 42;
 export const TB_ICON_SIZE = 25;
 
+export let SCHEME = 'https';
+export let DOMAIN_API = 'api.youxihou.com';
+export let DOMAIN_WWW = 'www.youxihou.com';
+export let DOMAIN_WEB = 'web.youxihou.com';
+export let API_BASE_URL = `${SCHEME}://${DOMAIN_API}`;
+export let WWW_BASE_URL = `${SCHEME}://${DOMAIN_WWW}`;
+export let WEB_BASE_URL = `${SCHEME}://${DOMAIN_WEB}`;
+
 export const COLOR = {
     theme: '#fa5914',
     screengb: '#ffffff',
     tabBarColor: '#f7f7f7',
     titleColor: '#ffffff',
     textEmpha: '#212121',
-    backgroundDarker: '#D6D6D6'
+    backgroundDarker: '#D6D6D6',
+    textLightNormal: '#FFFFFF',
+    textLightPrompt: '#EBEBEB',
 };
 
 export const HIDDEN_NAV_BAR_STYLE = {
@@ -43,4 +53,13 @@ export const TAB_BAR_STYLE = {
   navBarTitleTextCentered: true,
   navBarBackgroundColor: COLOR.theme,
   navBarTextColor: COLOR.titleColor
+};
+
+export const DEFAULT_NAV_BAR_STYLE = {
+  navBarTextColor: COLOR.textLightNormal,
+  navBarBackgroundColor: COLOR.theme,
+  navBarButtonColor: COLOR.textLightPrompt,
+  statusBarTextColorScheme: 'light',
+  statusBarHideWithNavBar: true,
+  navBarTitleTextCentered: true
 };

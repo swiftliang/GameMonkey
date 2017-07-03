@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-17 15:33:26 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-19 16:24:02
+ * @Last Modified time: 2017-06-29 16:50:36
  */
 'use strict'
 
@@ -12,10 +12,6 @@ import { TAB_BAR_STYLE } from './constant/config';
 import iconImages from './iconImages';
 
 import * as screens from './screen';
-
-import ScreenGame from './screen/ScreenGame';
-import ScreenFeed from './screen/ScreenFeed';
-import ScreenMe from './screen/ScreenMe';
 
 export function registerScreens(store, Provider) {
     let reg = (id, contaniner) => Navigation.registerComponent(
@@ -29,7 +25,10 @@ export function registerScreens(store, Provider) {
     reg('gm.Feed', screens.ScreenFeed);
     reg('gm.Me', screens.ScreenMe);
     reg('gm.bootstrap', screens.BootStrap);
-    reg('gm.ad', screens.ScreenAd)
+    reg('gm.ad', screens.ScreenAd);
+    reg('gm.perlogin', screens.PerLogin);
+    reg('gm.login', screens.Login);
+    reg('gm.reg', screens.Register);
 }
 
 export function navToBootstrap({isReset = false} = {}) {
