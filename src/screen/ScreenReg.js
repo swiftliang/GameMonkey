@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-19 16:36:36 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-30 12:57:43
+ * @Last Modified time: 2017-07-05 11:22:08
  */
 'use strict'
 
@@ -14,10 +14,8 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 import { DEFAULT_NAV_BAR_STYLE } from '../constant/config';
-import Form from '../components/common/Form';
-import FormItem from '../components/common/FormItem';
-import TextInput from '../components/common/TextInput';
-import ButtonWithBg from '../components/common/ButtonWithBg';
+import * as components from '../components';
+import { navToTab } from '../navigation';
 
 class ScreenReg extends React.Component {
     static navigatorStyle = DEFAULT_NAV_BAR_STYLE;
@@ -30,17 +28,17 @@ class ScreenReg extends React.Component {
     submit() {
         dismissKeyboard();
 
-        let { navigator, input, validateInput, sendVerifyCode } = this.props;
+        let { navigator, input, validateInput, register } = this.props;
         validateInput(this.screenId, input[this.screenId], () => {
             let { mobile, password } = input[this.screenId];
-            sendVerifyCode({
-                by: 'mobile',
+            let code = 0;
+            register({
                 mobile,
-                cbOk: () => navigator.push({
-                    screen: 'zqc.RegisterVerify',
-                    title: '验证',
-                    passProps: { mobile, password },
-                }),
+                password,
+                code,
+                cbOk: () => {
+                    navToTab();
+                },
             });
         });
     }
@@ -49,13 +47,13 @@ class ScreenReg extends React.Component {
         let { input, saveInput } = this.props;
         let { mobile, password } = input[this.screenId];
         return (
-            <View>
-                <Form>
-                    <FormItem
+            <components.Layout screenId={this.screenId}>
+                <components.Form>
+                    <components.FormItem
                         icon="account-circle"
                         containerStyle={{ borderTopWidth: 0 }}
                     >
-                        <TextInput
+                        <components.TextInput
                             placeholder="输入手机号"
                             keyboardType="numeric"
                             returnKeyType="next"
@@ -66,9 +64,9 @@ class ScreenReg extends React.Component {
                                 { mobile: text.trim() })}
                             onSubmitEditing={() => this.refPassword.focus()}
                         />
-                    </FormItem>
-                    <FormItem icon="lock">
-                        <TextInput
+                    </components.FormItem>
+                    <components.FormItem icon="lock">
+                        <components.TextInput
                             placeholder="设置登录密码，不少于6位"
                             returnKeyType="done"
                             secureTextEntry
@@ -79,14 +77,14 @@ class ScreenReg extends React.Component {
                                 { password: text.trim() })}
                             onSubmitEditing={() => this.submit()}
                         />
-                    </FormItem>
-                </Form>
-                <ButtonWithBg
+                    </components.FormItem>
+                </components.Form>
+                <components.ButtonWithBg
                     text="下一步"
                     onPress={() => this.submit()}
                     textStyle={{ fontSize: 16 }}
                 />
-            </View>
+            </components.Layout>
         );
     }
 }

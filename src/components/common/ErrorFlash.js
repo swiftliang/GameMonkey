@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-07-01 17:02:35 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-01 17:05:27
+ * @Last Modified time: 2017-07-05 10:29:21
  */
 'use strict'
 
@@ -12,7 +12,7 @@ import * as Animatable from 'react-native-animatable';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import {COLOR} from '../constant/config';
+import {COLOR} from '../../constant/config';
 
 function ErrorFlash({error, containerStyle}) {
   error = error.flash;

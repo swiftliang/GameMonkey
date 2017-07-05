@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 17:31:10 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-30 15:10:47
+ * @Last Modified time: 2017-07-05 11:30:11
  */
 'use strict'
 
@@ -21,7 +21,7 @@ export const TAB_BAR_HEIGHT = 42;
 export const TB_ICON_SIZE = 25;
 
 export let SCHEME = 'https';
-export let DOMAIN_API = 'api.youxihou.com';
+export let DOMAIN_API = 'localhost:12323';//'api.youxihou.com';
 export let DOMAIN_WWW = 'www.youxihou.com';
 export let DOMAIN_WEB = 'web.youxihou.com';
 export let API_BASE_URL = `${SCHEME}://${DOMAIN_API}`;
@@ -36,6 +36,7 @@ export const COLOR = {
     textEmpha: '#212121',
     backgroundDarker: '#D6D6D6',
     textLightNormal: '#FFFFFF',
+    backgroundNotice: '#FFFB00',
     textLightPrompt: '#EBEBEB',
 };
 
