@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-07-01 16:28:29 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-05 08:49:56
+ * @Last Modified time: 2017-07-05 17:03:16
  */
 'use strict'
 
@@ -44,7 +44,7 @@ export function setAccountSettings(settings) {
 
 export function register({mobile, password, code, cbOk}) {
   return dispatch => {
-    apis.register({mobile, password, code})
+    apis.regsiter({mobile, password})
       .then(response => dispatch(login({mobile, password, cbOk})))
       .catch(error => {
         if (error instanceof ApiResultError) {
@@ -86,9 +86,9 @@ export function isLogined({cbOk, cbFail}, {timeout = 5000} = {}) {
   };
 }
 
-export function login({username, mobile, email, password, cbOk}) {
+export function login({mobile, password, cbOk}) {
   return dispatch => {
-    apis.login({username, mobile, email, password})
+    apis.login({mobile, password})
       .then(response => {
         let {data: {user, settings}} = response;
         dispatch(setAccountUser({user, cbOk}));

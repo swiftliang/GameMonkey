@@ -2,18 +2,18 @@
  * @Author: swiftliang 
  * @Date: 2017-06-30 14:26:58 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-05 08:52:37
+ * @Last Modified time: 2017-07-06 22:06:31
  */
 'use strict'
 
 import { getApi, postApi } from './common';
 
-export function regsiter(moblie, password) {
-    return postApi('/regsiter', {moblie, password})
+export function regsiter({mobile, password}) {
+    return postApi('/register', {mobile, password})
 }
 
-export function login(moblie, password) {
-    return getApi('/login', {moblie, password})
+export function login({mobile, password}) {
+    return getApi('/login', {mobile, password})
 }
 
 export function resetPassword({mobile = '', email = '', password = '', code}) {

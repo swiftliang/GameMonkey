@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 17:31:10 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-05 11:30:11
+ * @Last Modified time: 2017-07-05 16:25:22
  */
 'use strict'
 
@@ -20,8 +20,8 @@ export const NAV_BAR_HEIGHT = 45;
 export const TAB_BAR_HEIGHT = 42;
 export const TB_ICON_SIZE = 25;
 
-export let SCHEME = 'https';
-export let DOMAIN_API = 'localhost:12323';//'api.youxihou.com';
+export let SCHEME = 'http';
+export let DOMAIN_API = '192.168.1.102:1323';//'api.youxihou.com';
 export let DOMAIN_WWW = 'www.youxihou.com';
 export let DOMAIN_WEB = 'web.youxihou.com';
 export let API_BASE_URL = `${SCHEME}://${DOMAIN_API}`;

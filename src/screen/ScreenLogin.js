@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-19 16:36:17 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-05 10:38:10
+ * @Last Modified time: 2017-07-05 17:14:55
  */
 'use strict'
 
@@ -59,9 +59,7 @@ class ScreenLogin extends React.Component {
                 username = account;
             }
             login({
-                username,
                 mobile,
-                email,
                 password,
                 cbOk: user => {
                     navToTab();
