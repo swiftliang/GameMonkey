@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-07-01 16:28:29 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-05 17:03:16
+ * @Last Modified time: 2017-07-08 17:30:22
  */
 'use strict'
 
@@ -10,6 +10,7 @@ import {ApiResultError, ERROR_CODE_DUPLICATED, ERROR_CODE_NOT_FOUND,
   ERROR_CODE_WRONG_PASSWORD, ERROR_CODE_INVALID_VERIFY_CODE} from '../error';
 import * as apis from '../apis';
 import * as actions from './';
+import {AsyncStorage} from 'react-native';
 
 export const RESET_ACCOUNT = 'reset_account';
 export const SET_ACCOUNT_USER = 'set_account_user';
@@ -45,7 +46,9 @@ export function setAccountSettings(settings) {
 export function register({mobile, password, code, cbOk}) {
   return dispatch => {
     apis.regsiter({mobile, password})
-      .then(response => dispatch(login({mobile, password, cbOk})))
+      .then(response => {
+        dispatch(login({mobile, password, cbOk}));
+      })
       .catch(error => {
         if (error instanceof ApiResultError) {
           if (error.code == ERROR_CODE_DUPLICATED) {
@@ -90,9 +93,8 @@ export function login({mobile, password, cbOk}) {
   return dispatch => {
     apis.login({mobile, password})
       .then(response => {
-        let {data: {user, settings}} = response;
-        dispatch(setAccountUser({user, cbOk}));
-        dispatch(setAccountSettings(settings));
+        AsyncStorage.setItem('token', response.token);
+        cbOk();
       })
       .catch(error => {
         if (error instanceof ApiResultError) {
