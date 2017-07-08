@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-07-01 16:28:29 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-08 17:30:22
+ * @Last Modified time: 2017-07-08 17:37:51
  */
 'use strict'
 
@@ -94,7 +94,9 @@ export function login({mobile, password, cbOk}) {
     apis.login({mobile, password})
       .then(response => {
         AsyncStorage.setItem('token', response.token);
-        cbOk();
+        if (cbOk) {
+          cbOk();
+        }
       })
       .catch(error => {
         if (error instanceof ApiResultError) {
@@ -116,6 +118,7 @@ export function logout(cbOk) {
         if (cbOk) {
           cbOk();
         }
+        AsyncStorage.removeItem('token');
       })
       .catch(error => dispatch(actions.handleError(error)));
   };
