@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 17:31:10 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-05 16:25:22
+ * @Last Modified time: 2017-07-09 13:48:52
  */
 'use strict'
 
@@ -38,6 +38,7 @@ export const COLOR = {
     textLightNormal: '#FFFFFF',
     backgroundNotice: '#FFFB00',
     textLightPrompt: '#EBEBEB',
+    backgroundNormal: '#FFFFFF',
 };
 
 export const HIDDEN_NAV_BAR_STYLE = {

@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-19 16:17:10 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-29 16:19:29
+ * @Last Modified time: 2017-07-08 21:27:56
  */
 'use strict'
 
@@ -42,7 +42,7 @@ export default class Ad extends React.Component {
                 this.props.navigator.resetTo({screen: 'gm.perlogin', title: ''})
             }
         }, 3000);
-    }
+    } 
 
     componentWillUnmount() {
         this.timer1 && clearInterval(this.timer1);

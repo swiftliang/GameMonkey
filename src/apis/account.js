@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-30 14:26:58 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-06 22:06:31
+ * @Last Modified time: 2017-07-09 12:21:02
  */
 'use strict'
 
@@ -22,6 +22,10 @@ export function resetPassword({mobile = '', email = '', password = '', code}) {
 
 export function logout() {
   return getApi('/logout');
+}
+
+export function feed(token) {
+  return getApi('api/feed', {}, { headers:{'Authorization':'Bearer '+ token}})
 }
 
 export function updateAccount(update, background = false) {

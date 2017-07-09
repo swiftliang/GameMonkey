@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-19 16:34:12 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-05 19:33:37
+ * @Last Modified time: 2017-07-09 13:33:31
  */
 'use strict'
 
@@ -23,9 +23,10 @@ export default class PerLogin extends React.Component {
                 screenId={this.screenId}
                 containerStyle={{ justifyContent: 'center' }}
             >
-                <Image
+                <components.Image
                     source={require('../../assets/imgs/timg.jpg')}
-                    style={{ alignSelf: 'center', borderRadius: 15, height: 200, width: 200 }}
+                    //style={{ alignSelf: 'center', borderRadius: 15, height: 200, width: 200 }}
+                    style={{alignSelf: 'center', borderRadius: 15}}
                 />
                 <components.Button
                     text='登录'

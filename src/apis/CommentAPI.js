@@ -17,9 +17,7 @@ export function getCommentsOfObject(objectType, objectID, limit, callback) {
     console.log('get comment url : ' + url);
     var headers = {
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'X-Auth-Token': token,
+        'Authorization': 'Bearer ' + token,
     }};
 
     fetch(url, headers)
