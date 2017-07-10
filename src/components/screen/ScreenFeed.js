@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 11:38:49 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-19 10:20:12
+ * @Last Modified time: 2017-07-10 10:11:46
  */
 'use strict'
 
@@ -12,7 +12,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import FeedList from '../components/feed/FeedList';
+import FeedList from '../../components/feed/FeedList';
 
 //import {bindActionCreators} from 'redux';
 //import {connect} from 'react-redux';

@@ -2,16 +2,16 @@
  * @Author: swiftliang 
  * @Date: 2017-06-17 15:33:26 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-29 16:50:36
+ * @Last Modified time: 2017-07-10 10:16:13
  */
 'use strict'
 
 import { Navigation } from 'react-native-navigation';
 
-import { TAB_BAR_STYLE } from './constant/config';
-import iconImages from './iconImages';
+import { TAB_BAR_STYLE } from '../constant/config';
+import iconImages from '../iconImages';
 
-import * as screens from './screen';
+import * as screens from '../components/screen';
 
 export function registerScreens(store, Provider) {
     let reg = (id, contaniner) => Navigation.registerComponent(

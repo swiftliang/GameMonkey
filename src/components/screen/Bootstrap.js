@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-19 14:20:05 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-09 13:41:13
+ * @Last Modified time: 2017-07-10 10:17:58
  */
 'use strict'
 
@@ -18,10 +18,10 @@ import {
 } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
-import { navToBootstrap, navToTab } from '../navigation';
-import { COLOR, HIDDEN_NAV_BAR_STYLE } from '../constant/config';
-import * as components from '../components'
+import * as actions from '../../actions';
+import { navToBootstrap, navToTab } from '../../navigators/navigation';
+import { COLOR, HIDDEN_NAV_BAR_STYLE } from '../../constant/config';
+import * as components from '../../components'
 
 class Bootstrap extends React.Component {
     static navigatorStyle = HIDDEN_NAV_BAR_STYLE;
@@ -49,7 +49,7 @@ class Bootstrap extends React.Component {
                 <StatusBar barStyle='dark-content' />
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                     <components.Image
-                        source={require('../../assets/imgs/timg.jpg')}
+                        source={require('../../../assets/imgs/timg.jpg')}
                         style={{ borderRadius: 30 }}
                     />
                     <Text style={styles.title}>在球场</Text>

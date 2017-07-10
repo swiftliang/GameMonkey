@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-17 16:19:58 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-19 14:59:58
+ * @Last Modified time: 2017-07-10 10:16:39
  */
 'use strict'
 
@@ -11,7 +11,7 @@ import compareVersions from 'compare-versions';
 import coordtransform from 'coordtransform';
 
 import { loadIconImages } from './iconImages';
-import { registerScreens, navToBootstrap, navToTab } from './navigation';
+import { registerScreens, navToBootstrap, navToTab } from './navigators/navigation';
 import { createPersistAppStore } from './store';
 import * as actions from './actions';
 import logger from './logger';

@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-19 16:17:10 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-08 21:27:56
+ * @Last Modified time: 2017-07-10 10:18:50
  */
 'use strict'
 
@@ -12,9 +12,9 @@ import {
     Image,
     View
 } from 'react-native';
-import { COLOR, HIDDEN_NAV_BAR_STYLE } from '../constant/config';
-import { navToTab } from '../navigation';
-import { isLogin } from '../utils/Secret'
+import { COLOR, HIDDEN_NAV_BAR_STYLE } from '../../constant/config';
+import { navToTab } from '../../navigators/navigation';
+import { isLogin } from '../../utils/Secret'
 import { Navigation } from 'react-native-navigation';
 
 export default class Ad extends React.Component {

@@ -2,10 +2,10 @@
  * @Author: swiftliang 
  * @Date: 2017-06-17 16:54:07 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-17 16:54:32
+ * @Last Modified time: 2017-07-10 10:17:37
  */
 import logger from '../logger';
-import {navToBootstrap} from '../navigation';
+import {navToBootstrap} from '../navigators/navigation';
 import {InputError, ApiHttpError} from '../error';
 
 export const RESET_ERROR = 'reset_error';

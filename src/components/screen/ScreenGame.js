@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 11:36:15 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-19 10:58:04
+ * @Last Modified time: 2017-07-10 10:11:51
  */
 'use strict'
 
@@ -10,7 +10,7 @@ import React from 'react';
 import { Text, Image } from 'react-native';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../../actions';
 
 class ScreenGame extends React.Component {
     render() {

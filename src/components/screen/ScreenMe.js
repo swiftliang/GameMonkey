@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-12 11:18:20 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-06-19 10:20:16
+ * @Last Modified time: 2017-07-10 10:12:21
  */
 'use strict'
 
@@ -10,7 +10,7 @@ import React from 'react';
 import { Text } from 'react-native';
 //import {bindActionCreators} from 'redux';
 //import {connect} from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../../actions';
 
 class ScreenMe extends React.Component {
     render() {

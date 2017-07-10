@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-19 16:36:17 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-05 17:14:55
+ * @Last Modified time: 2017-07-10 10:18:18
  */
 'use strict'
 
@@ -11,11 +11,11 @@ import { View } from 'react-native';
 import dismissKeyboard from 'dismissKeyboard';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { DEFAULT_NAV_BAR_STYLE } from '../constant/config';
-import { navToTab } from '../navigation';
-import * as actions from '../actions';
+import { DEFAULT_NAV_BAR_STYLE } from '../../constant/config';
+import { navToTab } from '../../navigators/navigation';
+import * as actions from '../../actions';
 
-import * as components from '../components';
+import * as components from '../../components';
 
 class ScreenLogin extends React.Component {
     static navigatorStyle = DEFAULT_NAV_BAR_STYLE;
