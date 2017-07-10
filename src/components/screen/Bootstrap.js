@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-19 14:20:05 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-10 11:18:30
+ * @Last Modified time: 2017-07-10 12:29:35
  */
 'use strict'
 
@@ -54,7 +54,7 @@ class Bootstrap extends React.Component {
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                     <components.Image
                         source={require('../../../assets/imgs/timg.jpg')}
-                        style={{ borderRadius: 30 }}
+                        style={{ borderRadius: 15 }}
                     />
                     <Text style={styles.title}>在球场</Text>
                 </View>
