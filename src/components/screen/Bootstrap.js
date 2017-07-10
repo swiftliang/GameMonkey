@@ -2,7 +2,7 @@
  * @Author: swiftliang 
  * @Date: 2017-06-19 14:20:05 
  * @Last Modified by: swiftliang
- * @Last Modified time: 2017-07-10 10:17:58
+ * @Last Modified time: 2017-07-10 11:18:30
  */
 'use strict'
 
@@ -31,8 +31,12 @@ class Bootstrap extends React.Component {
     }
 
     componentDidMount() {
-        let { navigator } = this.props;
-        this.timer1 = setTimeout(() => navigator.resetTo({ screen: 'gm.ad', title: '' }), 1000);
+        let {navigator, isReset} = this.props;
+        if(!isReset) {
+            this.timer1 = setTimeout(() => navigator.resetTo({ screen: 'gm.ad', title: '' }), 1000);
+        } else {
+             navigator.resetTo({screen: 'gm.perlogin', title: ''})
+        }
     }
 
     componentWillUnmount() {
